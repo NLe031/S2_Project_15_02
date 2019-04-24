@@ -31,6 +31,23 @@
       
 */
 
+//Loads in all of the needed information from the index to take the steps this javascript file has made
+window.addEventListener("load", function () {
+      var changingCells = document.querySelectorAll("table#travelExp input.sum");
+      for (var i = 0; i < changingCells.length; i++) {
+            changingCells[i].onchange = calcExp
+      }
+      document.getElementById("submitButton").addEventListener("click", validateSummary);
+})
+// Creates a function that validates the summary input text box area which pops up a custom message when the info doesn't match the pattern
+function validateSummary() {
+      var summary = document.getElementById("summary");
+      if (summary.validity.valueMissing) {
+            summary.setCustomValidity("You must include a summary on your trip report");
+      } else {
+            summary.setCustomValidity("")
+      }
+}
 
 
 
