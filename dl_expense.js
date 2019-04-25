@@ -49,8 +49,20 @@ function validateSummary() {
       }
 }
 
+// Creates a function that pulls the numeric value out of the sumfield variable and returns the sumTotal
+function calcClass(sumClass) {
+      var sumFields = document.getElementsByClassName(sumClass);
+      var sumTotal = 0;
+      for (var i = 0; i < sumFields.length; i++) {
+            var itemValue = parseFloat(sumFields[i].value);
+            if (!isNaN(itemValue)) {
+                  sumTotal += itemValue;
+            }
 
 
+      }
+      return sumTotal
+}
 
 
 
